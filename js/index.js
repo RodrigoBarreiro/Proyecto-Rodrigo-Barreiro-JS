@@ -1,3 +1,14 @@
+// VERIFICACION DE EDAD PARA HTML PORFAVOR DESCOMENTAR PARA CORRER EN NAVEGADOR
+
+let edad = parseInt (prompt ("Ingrese su edad"));
+
+while ( edad < 18) {
+    alert ("Prohibido ingresar, el consumo de bebidas alcholicas es para mayores de 18 años");
+    edad = parseInt (prompt ("Ingrese su edad"));
+}
+    alert ("Puede ingresar.");
+
+
 const cerveza1 = new Producto (1 ,"Witbier", "$300", "1 lts", "Oceanica", 10 , "Dulzor placentero (a menudo con notas a miel y/o vainilla), con un frutado cítrico a naranjas. Refrescante con acabado seco y a veces ácido. Puede tener un leve sabor a trigo. Opcionalmente puede tener una muy ligera acidez láctica. Los sabores a hierbas y especias, los cuales pueden incluir coriandro y otros, son comunes y deben ser sutiles y balanceados y no deben superponerse con los otros sabores. Sabor terroso/especiado a lúpulo de nulo a bajo, y si se percibe, no se interpone con las especias. Amargor de bajo a medio bajo (como en una Hefeweizen), y no interfiere con los refrescantes sabores frutados/especiados ni persiste en el acabado. No debe estar presente amargor de la cáscara de naranja. Sabores a vegetal, apio, jamón o jabón son inapropiados. Sin diacetilo." );
 const cerveza2 = new Producto (2, "Pale Ale", "$450","1 lts",  "Oceanica", 20,"Sabor a lúpulo usualmente de moderado a alto, comunmente presentando un carácter cítrico (aunque se pueden utilizar algunas otras variedades de lúpulo). Un límpido sabor a malta (de bajo a moderadamente alto) balancea al lúpulo, pudiendo opcionalmente presentar carácteres secundarios de la malta (a pan, a tostado o a bizcocho). El balance es habitualmente hacia el lúpulo y el amargor, aunque la presencia de la malta puede ser sustancial. Los sabores a caramelo están generalmente restringidos o ausentes. Esteres frutados de nulo a moderado. Amargor de moderado a alto, con un acabado moderadamente seco. El sabor a lúpulo y el amargor generalmente perduran en el acabado. Sin diacetilo. El dry hopping (si se utiliza) puede aportar notas a hierbas, aunque no debe ser excesivo." );
 const cerveza3 = new Producto (3, "Wite IPA", "$400", "1 lts", "Oceanica", 40, "Sabor ligero a malta, quizá con reminiscencias a pan. Los Ésteres afrutados son entre moderados y altos, con sabores cítricos que recuerdan a la naranja o al pomelo, o a frutas como el albaricoque. A veces tambiÉn están presentes los sabores a banana. El sabor a lúpulo es entre medio-bajo y medio-alto, destacando notas cítricas y afrutadas. El carácter especiado y a clavo originado por la levadura belga tambiÉn podría hacer acto de presencia. El sabor a cilantro y a piel de naranja son frecuentes. El amargor es alto, por lo que el final es refrescante y seco. Ésteres moderadamente afrutados (banana, cítricos, quizá a albaricoque). Puede tener un aroma entre ligero y moderado a especias, con reminiscencias a cilantro o pimienta, originadas por la adición de especias o la levadura belga." );
