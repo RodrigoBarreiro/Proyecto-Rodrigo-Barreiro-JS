@@ -1,5 +1,4 @@
-// VERIFICACION DE EDAD PARA HTML PORFAVOR DESCOMENTAR PARA CORRER EN NAVEGADOR
-
+// VERIFICACION DE EDAD PARA HTML 
 let edad = parseInt (prompt ("Ingrese su edad"));
 
 while ( edad < 18) {
@@ -8,7 +7,7 @@ while ( edad < 18) {
 }
     alert ("Puede ingresar.");
 
-
+//INFO PRODUCTOS CREADOS EN BASE A LA FUNCION CONSTRUCTORA QUE SE ENCUENTRA EN PRODUCTO. JS.
 const cerveza1 = new Producto (1 ,"Witbier", "$300", "1 lts", "Oceanica", 10 , "Dulzor placentero (a menudo con notas a miel y/o vainilla), con un frutado cítrico a naranjas. Refrescante con acabado seco y a veces ácido. Puede tener un leve sabor a trigo. Opcionalmente puede tener una muy ligera acidez láctica. Los sabores a hierbas y especias, los cuales pueden incluir coriandro y otros, son comunes y deben ser sutiles y balanceados y no deben superponerse con los otros sabores. Sabor terroso/especiado a lúpulo de nulo a bajo, y si se percibe, no se interpone con las especias. Amargor de bajo a medio bajo (como en una Hefeweizen), y no interfiere con los refrescantes sabores frutados/especiados ni persiste en el acabado. No debe estar presente amargor de la cáscara de naranja. Sabores a vegetal, apio, jamón o jabón son inapropiados. Sin diacetilo." );
 const cerveza2 = new Producto (2, "Pale Ale", "$450","1 lts",  "Oceanica", 20,"Sabor a lúpulo usualmente de moderado a alto, comunmente presentando un carácter cítrico (aunque se pueden utilizar algunas otras variedades de lúpulo). Un límpido sabor a malta (de bajo a moderadamente alto) balancea al lúpulo, pudiendo opcionalmente presentar carácteres secundarios de la malta (a pan, a tostado o a bizcocho). El balance es habitualmente hacia el lúpulo y el amargor, aunque la presencia de la malta puede ser sustancial. Los sabores a caramelo están generalmente restringidos o ausentes. Esteres frutados de nulo a moderado. Amargor de moderado a alto, con un acabado moderadamente seco. El sabor a lúpulo y el amargor generalmente perduran en el acabado. Sin diacetilo. El dry hopping (si se utiliza) puede aportar notas a hierbas, aunque no debe ser excesivo." );
 const cerveza3 = new Producto (3, "Wite IPA", "$400", "1 lts", "Oceanica", 40, "Sabor ligero a malta, quizá con reminiscencias a pan. Los Ésteres afrutados son entre moderados y altos, con sabores cítricos que recuerdan a la naranja o al pomelo, o a frutas como el albaricoque. A veces tambiÉn están presentes los sabores a banana. El sabor a lúpulo es entre medio-bajo y medio-alto, destacando notas cítricas y afrutadas. El carácter especiado y a clavo originado por la levadura belga tambiÉn podría hacer acto de presencia. El sabor a cilantro y a piel de naranja son frecuentes. El amargor es alto, por lo que el final es refrescante y seco. Ésteres moderadamente afrutados (banana, cítricos, quizá a albaricoque). Puede tener un aroma entre ligero y moderado a especias, con reminiscencias a cilantro o pimienta, originadas por la adición de especias o la levadura belga." );
@@ -18,7 +17,7 @@ const cerveza6 = new Producto (6, "174 IPA", "$380", "1 lts", "Barbarian", 20, "
 const cerveza7 = new Producto (7, "Garaje Brown Ale", "$380", "1 lts", "Barbarian", 12, "Sabor a malta de medio a alto (a menudo con sabores a caramelo, tostado y/o chocolate), con un amargor de medio a medio-alto. El acabado medianamente seco provee un retrogusto con presencia tanto de la malta como del lúpulo. Sabor a lúpulo de suave a moderado, y puede tener opcionalmente un carácter cítrico. Esteres futados de muy bajo a moderado. Diacetilo de nulo a moderadamente bajo.De cuerpo medio a medio-pleno. Las versiones más amargas pueden tener una impresión seca y resinosa. Carbonatación de moderada a moderadamente alta. Las versiones más fuertes pueden tener una ligera tibieza por alcohol en el acabado. " );
 const cerveza8 = new Producto (8, "Lima Pale Ale", "$450", "1 lts", "Barbarian", 15, "Cerveza de color dorado, con intenso sabor y aroma cítrico-frutado, como a maracuyá y mango debido a la adición de lúpulos especiales durante la maduración. El acabado medianamente seco provee un retrogusto con presencia tanto de la malta como del lúpulo. Sabor a lúpulo de suave a moderado, y puede tener opcionalmente un carácter cítrico. Esteres futados de muy bajo a moderado, las cervezas citricas son provenientes de Blegica donde fueron los incursores de esta tan especial combinacion, El balance es habitualmente hacia el lúpulo y el amargor, aunque la presencia de la malta puede ser sustancial. Los sabores a caramelo están generalmente restringidos o ausentes" );
 
-// ARREGLO CON CERVEZAS
+// SE INCORPORA ARREGLO CON LOS PRODUCTOS QUE SE ENCUENTRAN A LA VENTA EN LA PAGINA WEB.
 const cervezas = [];
 cervezas.push (cerveza1);
 cervezas.push (cerveza2);
@@ -31,6 +30,7 @@ cervezas.push (cerveza8);
 
 console.log(cervezas);
 
+//SE INCORPORA DOM CON INFORMACION NECESARIA PARA PAGINA WEB SOBRE LOS PRODUCTOS y SE INTERACTUA CON HTML.
 cervezas.forEach (cerveza => { 
     document.getElementById ("cervaza-titulo-" + cerveza.id).innerText = cerveza.nombre;
     document.getElementById ("cerveza-" + cerveza.id ).innerText = cerveza.descripcion;
