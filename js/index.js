@@ -7,6 +7,7 @@ while ( edad < 18) {
 }
     alert ("Puede ingresar.");
  */
+
 //INFO PRODUCTOS CREADOS EN BASE A LA FUNCION CONSTRUCTORA QUE SE ENCUENTRA EN PRODUCTO. JS.
 const cerveza1 = new Producto (1 ,"Witbier", "$300", "1 lts", "Oceanica", 10 , "Dulzor placentero (a menudo con notas a miel y/o vainilla), con un frutado cítrico a naranjas. Refrescante con acabado seco y a veces ácido. Puede tener un leve sabor a trigo. Opcionalmente puede tener una muy ligera acidez láctica. Los sabores a hierbas y especias, los cuales pueden incluir coriandro y otros, son comunes y deben ser sutiles y balanceados y no deben superponerse con los otros sabores. Sabor terroso/especiado a lúpulo de nulo a bajo, y si se percibe, no se interpone con las especias. Amargor de bajo a medio bajo (como en una Hefeweizen), y no interfiere con los refrescantes sabores frutados/especiados ni persiste en el acabado. No debe estar presente amargor de la cáscara de naranja. Sabores a vegetal, apio, jamón o jabón son inapropiados. Sin diacetilo." );
 const cerveza2 = new Producto (2, "Pale Ale", "$450","1 lts",  "Oceanica", 20,"Sabor a lúpulo usualmente de moderado a alto, comunmente presentando un carácter cítrico (aunque se pueden utilizar algunas otras variedades de lúpulo). Un límpido sabor a malta (de bajo a moderadamente alto) balancea al lúpulo, pudiendo opcionalmente presentar carácteres secundarios de la malta (a pan, a tostado o a bizcocho). El balance es habitualmente hacia el lúpulo y el amargor, aunque la presencia de la malta puede ser sustancial. Los sabores a caramelo están generalmente restringidos o ausentes. Esteres frutados de nulo a moderado. Amargor de moderado a alto, con un acabado moderadamente seco. El sabor a lúpulo y el amargor generalmente perduran en el acabado. Sin diacetilo. El dry hopping (si se utiliza) puede aportar notas a hierbas, aunque no debe ser excesivo." );
@@ -38,15 +39,44 @@ cervezas.forEach (cerveza => {
 })
 
 
-// SE AGREGA EVENTO EN BOTON COMPRAR, ARRIBA EN TIENDA SUMARA LAS UNIDADES A COMPRAR  
+// SE INICIALIZA CARRITO.  
 let cervezasCompradas = 0;
-
+const carrito = [];
+cervezas.forEach (cerveza => { 
+    carrito[cerveza.id] = [];
+})
+localStorage.setItem  ("carrito", localStorage.getItem ("carrito") || JSON.stringify(carrito));
+dibujarCarrito(); 
+// EVENTO A COMPRAR UN PRODUCTO.
 document.getElementById ("cervezasCompradas").innerText= cervezasCompradas;
 const botones = document.querySelectorAll (".comprarBtn");
 botones.forEach (boton => {
-    boton.addEventListener ( "click", () => {
+    boton.addEventListener ( "click", (event) => {
         cervezasCompradas = cervezasCompradas + 1;
         document.getElementById ("cervezasCompradas").innerText= cervezasCompradas;
+        const id = event.currentTarget.dataset.id;
+        const productoComprado = cervezas.find ( cerveza => {
+            return cerveza.id === parseFloat(id);
+        })
+        const carritoGuardado = JSON.parse(localStorage.getItem ("carrito"));
+        const carritoProdructoMismoId = carritoGuardado [id] ;
+        carritoProdructoMismoId.push(productoComprado);
+        localStorage.setItem ("carrito", JSON.stringify(carritoGuardado));
+        dibujarCarrito();
     })
 })
+
+function dibujarCarrito () {
+    const menu = document.getElementById ("carrito");
+    let liHtml = "";
+    const carritoGuardado = JSON.parse(localStorage.getItem ("carrito"));
+    console.log(carritoGuardado);
+    carritoGuardado.forEach (carritoProducto => { 
+        if (carritoProducto && carritoProducto.length > 0) {
+            liHtml = liHtml + "<li>" + carritoProducto.length + " X " + carritoProducto [0].nombre + " " + carritoProducto[0].precio + "</li>";
+        }
+    })
+    // QUEDA PENDIENTE RECORRER DE NUEVO CARRITO GUARDADO E IR SUMANDO TODOS LOS TOTALES Y SUMAR CANTIDAD DE CERVEZA. 
+    menu.innerHTML = liHtml;
+}
 

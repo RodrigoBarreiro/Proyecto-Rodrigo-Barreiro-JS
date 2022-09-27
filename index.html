@@ -25,10 +25,17 @@
                             <a class="nav-link colorText fs-4" aria-current="page" href="./paginas/acerca_de.html">Nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link colorText fs-4 "> <img class="carroIcono" src="./imagenes/carrito2.png" alt=""> </a>
-                        </li>
-                        <li class="nav-item tienda">
-                            <a class="nav-link colorText fs-4 comprasCarrito "> Usted compro <span id="cervezasCompradas"></span> cervezas </a>
+                            <div class="dropdown ">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img class="carroIcono" src="./imagenes/carrito2.png" alt=""><span class="badge text-bg-secondary"><span id="cervezasCompradas"></span></span>
+                                </button>
+                                <ul class="dropdown-menu" id="carrito">
+                                    <li> Witbear x1 $300</li>
+                                    <li> Pale Ale x2 $900</li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li> Total $1200 </li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -40,10 +47,10 @@
             <div class="card" style="width: 21rem;">
                 <img src="./imagenes/01.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5  id="cervaza-titulo-1" class="card-title">Card title</h5>
+                    <h5 id="cervaza-titulo-1" class="card-title">Card title</h5>
                     <p id="cerveza-1" class="card-text"></p>
                     <p class="precioResaltado" id="precio-1"></p>
-                    <a class="btn btn-warning fw-bold comprarBtn">Comprar</a>
+                    <a class="btn btn-warning fw-bold comprarBtn" data-id="1">Comprar</a>
                 </div>
             </div>
             <div class="card" style="width: 21rem;">
@@ -52,7 +59,7 @@
                     <h5 id="cervaza-titulo-2"class="card-title">Card title</h5>
                     <p id="cerveza-2" class="card-text">.</p>
                     <p class="precioResaltado" id="precio-2"></p>
-                    <a  class="btn btn-warning fw-bold comprarBtn">Comprar</a>
+                    <a  class="btn btn-warning fw-bold comprarBtn" data-id="2">Comprar</a>
                 </div>
             </div>
             <div class="card" style="width: 21rem;">
@@ -61,7 +68,7 @@
                     <h5 id="cervaza-titulo-3" class="card-title">Card title</h5>
                     <p id="cerveza-3" class="card-text"></p>
                     <p class="precioResaltado" id="precio-3"></p>
-                    <a  class="btn btn-warning fw-bold comprarBtn">Comprar</a>
+                    <a  class="btn btn-warning fw-bold comprarBtn" data-id="3">Comprar</a>
                 </div>
             </div>
             <div class="card" style="width: 21rem;">
@@ -70,7 +77,7 @@
                     <h5 id="cervaza-titulo-4" class="card-title">Card title</h5>
                     <p id="cerveza-4" class="card-text"></p>
                     <p class="precioResaltado" id="precio-4"></p>
-                    <a  class="btn btn-warning fw-bold comprarBtn">Comprar</a>
+                    <a  class="btn btn-warning fw-bold comprarBtn" data-id="4">Comprar</a>
                 </div>
             </div>
             <div class="card" style="width: 21rem;">
@@ -79,7 +86,7 @@
                     <h5 id="cervaza-titulo-5" class="card-title">Card title</h5>
                     <p id="cerveza-5" class="card-text"></p>
                     <p class="precioResaltado" id="precio-5"></p>
-                    <a class="btn btn-warning fw-bold comprarBtn">Comprar</a>
+                    <a class="btn btn-warning fw-bold comprarBtn" data-id="5">Comprar</a>
                 </div>
             </div>
             <div class="card" style="width: 21rem;">
@@ -88,7 +95,7 @@
                     <h5 id="cervaza-titulo-6" class="card-title">Card title</h5>
                     <p id="cerveza-6" class="card-text"></p>
                     <p class="precioResaltado" id="precio-6"></p>
-                    <a class="btn btn-warning fw-bold comprarBtn">Comprar</a>
+                    <a class="btn btn-warning fw-bold comprarBtn" data-id="6">Comprar</a>
                 </div>
             </div>
             <div class="card" style="width: 21rem;">
@@ -97,7 +104,7 @@
                     <h5 id="cervaza-titulo-7" class="card-title">Card title</h5>
                     <p id="cerveza-7" class="card-text"></p>
                     <p class="precioResaltado" id="precio-7"></p>
-                    <a class="btn btn-warning fw-bold comprarBtn">Comprar</a>
+                    <a class="btn btn-warning fw-bold comprarBtn" data-id="7">Comprar</a>
                 </div>
             </div>
             <div class="card" style="width: 21rem;">
@@ -106,7 +113,7 @@
                     <h5 id="cervaza-titulo-8" class="card-title">Card title</h5>
                     <p id="cerveza-8" class="card-text"></p>
                     <p class="precioResaltado" id="precio-8"></p>
-                    <a class="btn btn-warning fw-bold comprarBtn">Comprar</a>
+                    <a class="btn btn-warning fw-bold comprarBtn" data-id="8">Comprar</a>
                 </div>
             </div>
         </div>
