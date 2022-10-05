@@ -1,3 +1,4 @@
+//SE AGREGA SWEET ALERT CON SOLICITUD DE EDAD PARA INGRESAR EN LA PAGINA PARA VENTA DE ALCOHOL
 (async function pedirEdad (){
     const {value: edad } = await Swal.fire ({
         title: 'Bienvenidos al Tarro Frío',
@@ -42,18 +43,6 @@
         })
     }
 })()
-
-// VERIFICACION DE EDAD PARA HTML 
-/* let edad = parseInt (prompt ("Ingrese su edad"));
-while ( edad < 18) {
-    alert ("Prohibido ingresar, el consumo de bebidas alcoholicas es para mayores de 18 años");
-    edad = parseInt (prompt ("Ingrese su edad"));
-}
-    alert ("Puede ingresar."); 
- */
-
-
-
 
 // SE OPTIMIZA VARIABLES Y SE INCORPORAN ARREGLOS CON LOS PRODUCTOS QUE SE ENCUENTRAN A LA VENTA EN LA PAGINA WEB QUEDA PARA PROXIMA ENTREGA REDUCIR TEXTOS Y AGREGAR FOTOS EN TIENDA.
 const cervezas = [
