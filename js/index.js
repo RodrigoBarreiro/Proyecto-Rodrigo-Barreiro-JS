@@ -1,10 +1,58 @@
+(async function pedirEdad (){
+    const {value: edad } = await Swal.fire ({
+        title: 'Bienvenidos al Tarro Frío',
+        backdrop: true,
+        text:'Que edad tíenes?',
+        confirmButtonText: 'Aceptar',
+        confirmButtonColor: '#DEB887',
+        footer: '<span> <b> Esta inforamcion es importante </b> </span>',
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        allowEnterKey: false,
+        input:'range',
+        inputAttributes: {
+        min: 8,
+        max: 120,
+        step: 1
+        },
+        inputValue: 25,
+    });
+
+    if (edad < 18) {
+        await Swal.fire ({
+            icon:'error',
+            title: 'Prohibido ingresar, el consumo de bebidas alcoholicas es para mayores de 18 años.',
+            confirmButtonText: 'Aceptar',
+            backdrop: true,
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            allowEnterKey: false,
+        })
+        pedirEdad();
+    }else {
+        Swal.fire ({
+            icon:'success',
+            title: 'Puede ingresar.',
+            confirmButtonText: 'Aceptar',
+            confirmButtonColor: '#DEB887',
+            backdrop: true,
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            allowEnterKey: false,
+        })
+    }
+})()
+
 // VERIFICACION DE EDAD PARA HTML 
-let edad = parseInt (prompt ("Ingrese su edad"));
+/* let edad = parseInt (prompt ("Ingrese su edad"));
 while ( edad < 18) {
     alert ("Prohibido ingresar, el consumo de bebidas alcoholicas es para mayores de 18 años");
     edad = parseInt (prompt ("Ingrese su edad"));
 }
     alert ("Puede ingresar."); 
+ */
+
+
 
 
 // SE OPTIMIZA VARIABLES Y SE INCORPORAN ARREGLOS CON LOS PRODUCTOS QUE SE ENCUENTRAN A LA VENTA EN LA PAGINA WEB QUEDA PARA PROXIMA ENTREGA REDUCIR TEXTOS Y AGREGAR FOTOS EN TIENDA.
