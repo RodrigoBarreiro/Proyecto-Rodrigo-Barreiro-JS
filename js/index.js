@@ -54,8 +54,12 @@ fetch("http://localhost:3000/productos")
     }
 })()
 
+let cervezas = [];
+let carrito = [];
+let cervezasCompradas = 0;
+
 function init (){
-    const cervezas = fetchResult.map (cerveza => new Producto ( cerveza.id, cerveza.nombre, cerveza.precio, cerveza.envase, cerveza.marca, cerveza.stock, cerveza.descpricion ));
+    cervezas = fetchResult.map (cerveza => new Producto ( cerveza.id, cerveza.nombre, cerveza.precio, cerveza.envase, cerveza.marca, cerveza.stock, cerveza.descpricion ));
     console.log (cervezas);
     //SE INCORPORA DOM CON INFORMACION NECESARIA PARA PAGINA WEB SOBRE LOS PRODUCTOS y SE INTERACTUA CON HTML.
     cervezas.forEach (cerveza => { 
@@ -65,11 +69,8 @@ function init (){
     })
     
     // SE INICIALIZA CARRITO.  
-    let cervezasCompradas = 0;
-    const carrito = [];
-    cervezas.forEach (cerveza => { 
-        carrito[cerveza.id] = [];
-    })
+    inicializarCarrito ();
+
     localStorage.setItem  ("carrito", localStorage.getItem ("carrito") || JSON.stringify(carrito));
     dibujarCarrito(); 
     
@@ -79,7 +80,6 @@ function init (){
     botones.forEach (boton => {
         boton.addEventListener ( "click", (event) => {
             cervezasCompradas = cervezasCompradas + 1;
-            document.getElementById ("cervezasCompradas").innerText= cervezasCompradas;
             const id = event.currentTarget.dataset.id;
             const productoComprado = cervezas.find ( cerveza => {
                 return cerveza.id === parseFloat(id);
@@ -93,19 +93,40 @@ function init (){
     })
 }
 
-
 function dibujarCarrito () {
+    document.getElementById ("cervezasCompradas").innerText= cervezasCompradas;
     const menu = document.getElementById ("carrito");
     let liHtml = "";
     const carritoGuardado = JSON.parse(localStorage.getItem ("carrito"));
     console.log(carritoGuardado);
-    carritoGuardado.forEach (carritoProducto => { 
+    carritoGuardado.forEach ((carritoProducto, id) => { 
         if (carritoProducto && carritoProducto.length > 0) {
-            liHtml = liHtml + "<li>" + carritoProducto.length + " X " + carritoProducto [0].nombre + " " + carritoProducto[0].precio + "</li>";
+            liHtml = liHtml + "<li> <img src=\"./imagenes/"  + id + ".png\" width =\"50px\" ></img>" + carritoProducto.length + " X " + carritoProducto [0].nombre + " " + carritoProducto[0].precio + "</li>";
         }
-    })
-    // QUEDA PENDIENTE RECORRER DE NUEVO CARRITO GUARDADO E IR SUMANDO TODOS LOS TOTALES Y SUMAR CANTIDAD DE CERVEZA. 
+    }) 
     menu.innerHTML = liHtml;
 }
+
+function inicializarCarrito (){
+    cervezas.forEach (cerveza => { 
+        carrito[cerveza.id] = [];
+    })
+    cervezasCompradas = 0;
+}
+
+// BOTON DE CANCELAR COMPRA
+document.getElementById ("borrarCarrito").addEventListener ( "click", (event) => {
+    inicializarCarrito ();
+    localStorage.setItem ("carrito", JSON.stringify(carrito));
+    dibujarCarrito();
+})
+
+
+
+
+// BOTON COMPRAR PARA FINALIZAR COMPRA 
+// SUMA TOTAL DE LA COMPRA 
+
+
 
 

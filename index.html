@@ -29,11 +29,10 @@
                                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <img class="carroIcono" src="./imagenes/carrito2.png" alt=""><span class="badge text-bg-secondary"><span id="cervezasCompradas"></span></span>
                                 </button>
-                                <ul class="dropdown-menu" id="carrito">
-                                    <li> Witbear x1 $300</li>
-                                    <li> Pale Ale x2 $900</li>
+                                <ul class="dropdown-menu">
+                                    <li><ul id="carrito"></ul></li>
                                     <li><hr class="dropdown-divider"></li>
-                                    <li> Total $1200 </li>
+                                    <li><button  id="borrarCarrito">Cancelar</button></li>
                                 </ul>
                             </div>
                         </li>
@@ -45,7 +44,7 @@
     <main class=" mt-5">
         <div class="d-flex flex-wrap justify-content-evenly gap-5 mx-5">
             <div class="card" style="width: 21rem;">
-                <img src="./imagenes/01.png" class="card-img-top" alt="...">
+                <img src="./imagenes/1.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 id="cervaza-titulo-1" class="card-title">Card title</h5>
                     <p id="cerveza-1" class="card-text"></p>
