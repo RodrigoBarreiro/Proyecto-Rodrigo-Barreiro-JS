@@ -1,5 +1,7 @@
 let fetchResult = null;
-// SE UTILIA COMANDOS npm install && npm run start-server
+/*
+* SE UTILIA COMANDOS npm install && npm run start-server
+*/
 fetch("http://localhost:3000/productos")
     .then((response) => response.json())
     .then((data) => {
@@ -7,7 +9,9 @@ fetch("http://localhost:3000/productos")
         init();
     });
 
-//SE AGREGA SWEET ALERT CON SOLICITUD DE EDAD PARA INGRESAR EN LA PAGINA PARA VENTA DE ALCOHOL
+/*
+*SE AGREGA SWEET ALERT CON SOLICITUD DE EDAD PARA INGRESAR EN LA PAGINA PARA VENTA DE ALCOHOL
+*/
 (async function pedirEdad (){
     const {value: edad } = await Swal.fire ({
         title: 'Bienvenidos al Tarro Frío',
@@ -60,7 +64,9 @@ let cervezasCompradas = 0;
 function init (){
     cervezas = fetchResult.map (cerveza => new Producto ( cerveza.id, cerveza.nombre, cerveza.precio, cerveza.envase, cerveza.marca, cerveza.stock, cerveza.descpricion ));
     carrito = new Carrito(cervezas);
-    //SE INCORPORA DOM CON INFORMACION NECESARIA PARA PAGINA WEB SOBRE LOS PRODUCTOS y SE INTERACTUA CON HTML.
+    /*
+    *SE INCORPORA DOM CON INFORMACION NECESARIA PARA PAGINA WEB SOBRE LOS PRODUCTOS y SE INTERACTUA CON HTML.
+    */
     cervezas.forEach (cerveza => { 
         document.getElementById ("cervaza-titulo-" + cerveza.id).innerText = cerveza.nombre;
         document.getElementById ("cerveza-" + cerveza.id ).innerText = cerveza.descripcion;
@@ -68,8 +74,9 @@ function init (){
     })
     
     dibujarCarrito(); 
-    
-    // EVENTO A COMPRAR UN PRODUCTO.
+    /*
+    *EVENTO A COMPRAR UN PRODUCTO.
+    */
     document.getElementById ("cervezasCompradas").innerText= carrito.obtenerCervezasCompradas();
     const botones = document.querySelectorAll (".comprarBtn");
     botones.forEach (boton => {

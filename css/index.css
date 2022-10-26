@@ -24,4 +24,10 @@
 
 .dropdown-menu {
     width: 300px;
+    background-color: burlywood;
+}
+
+.boton-confirmar {
+    margin-left: 20px;
+    margin-right: 5px;
 }

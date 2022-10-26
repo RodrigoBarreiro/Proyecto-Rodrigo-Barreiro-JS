@@ -56,7 +56,7 @@ class Carrito{
     }
 
     /*
-    * Obtiene la el monto total de todos los productos que se encuentran en el carrito
+    * Obtiene el monto total de todos los productos que se encuentran en el carrito
     */
     obtenerMontoTotalCervezasCompradas(){
         let montoTotalCervezas = 0;
